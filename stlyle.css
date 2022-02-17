@@ -7,7 +7,7 @@
 body {
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    
 }
 
 header,
@@ -15,14 +15,50 @@ footer {
     width: 100%;
     text-align: center;
     background-color: azure;
-    
-}
-
-footer {
-
+    flex: 1 100%;
+    padding: 10px;
+    height: 10vh;
 }
 
 #sketch-tools{
     background-color: bisque;
-    width: fit-content;
+    height: 80vh;
+}
+
+#sketchpad-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+}
+
+.flex-item {
+    background: tomato;
+    margin: 1px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    flex: 1 0 0px;
+    min-width: 1.5em;
+}
+.flex-item:before {
+    content: "";
+	display: block;
+	padding-top: 100%;
+    float: left;
 }
