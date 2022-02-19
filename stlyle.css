@@ -12,9 +12,12 @@ body {
 }
 /*Typography*/
 nav {
+    box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
+}
+
+.nav-text {
     font-size: 2rem;
     text-shadow: 4px 6px 5px rgba(0,0,0,0.4);
-    box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
 }
 
 .sketchpad-container{
@@ -104,10 +107,7 @@ nav {
   hsl(39deg 100% 50%) 59%,
   hsl(40deg 100% 50%) 100%
 );
-
-
 }
-
 
 /* Layout */
 nav,
