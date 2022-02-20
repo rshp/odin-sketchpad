@@ -1,176 +1,179 @@
 /* General layout */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 body {
-    padding: 0px;
-    margin: 0px;
-    /* overflow: hidden; */
-    display: flex;
-    gap: 2rem;
-    height: 100vh;
-    font-family: 'Architects Daughter', cursive;
-    box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	/* overflow: hidden; */
+	display: flex;
+	gap: 2rem;
+	height: 100vh;
+	font-family: 'Architects Daughter', cursive;
+	box-sizing: border-box;
 }
 /*Typography*/
 nav {
-    box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
+	box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
 }
 
 .nav-text {
-    font-size: 2rem;
-    text-shadow: 4px 6px 5px rgba(0,0,0,0.4);
+	font-size: 2rem;
+	text-shadow: 4px 6px 5px rgba(0, 0, 0, 0.4);
 }
 
-.sketchpad-container{
-    box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
+.sketchpad-container {
+	box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
 }
 
 button,
 .dropbtn,
 .dropdown-content {
-    background-color: white;
-    color: orangered;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    border-style: solid;
-    border-color: white;
-    box-shadow: 0px 0px 20px 6px rgb(255, 255, 255),
-                inset 0px 0px 10px 2px #FF6A00;
-    transition: 0.3s;
+	background-color: white;
+	color: orangered;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 1.5rem;
+	border-radius: 1rem;
+	padding: 0.5rem;
+	border-style: solid;
+	border-color: white;
+	box-shadow: 0px 0px 20px 6px rgb(255, 255, 255),
+		inset 0px 0px 10px 2px #ff6a00;
+	transition: 0.3s;
 }
 
 button:hover,
-.dropdown:hover .dropbtn{
-    box-shadow: 0px 0px 20px 6px rgb(255, 255, 255)
+.dropdown:hover .dropbtn {
+	box-shadow: 0px 0px 20px 6px rgb(255, 255, 255);
 }
 
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropbtn {
-      width: 100%;
-  }
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: orangered;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropbtn {
+	width: 100%;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: orangered;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+	background-color: #f1f1f1;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-display: block;
+	display: block;
 }
 
 .slidecontainer {
-width: 100%;
+	width: 100%;
 }
 
 .slider {
-width: 100%;
-height: 1rem;
-background: white;
-/* outline: none; */
-opacity: 0.7;
-transition: opacity .2s;
-border-radius: 1rem;
+	width: 100%;
+	height: 1rem;
+	background: white;
+	/* outline: none; */
+	opacity: 0.7;
+	transition: opacity 0.2s;
+	border-radius: 1rem;
 }
 
 .slider:hover {
-opacity: 1;
+	opacity: 1;
 }
 
 .slider::-webkit-slider-thumb,
 .slider::-moz-range-thumb {
-appearance: none;
-width: 1.2rem;
-height: 1.2rem;
-background: orange;
-cursor: pointer;
-border-color: white;
-border-width: 0.3rem;
-border-radius: 1rem;
+	appearance: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: orange;
+	cursor: pointer;
+	border-color: white;
+	border-width: 0.3rem;
+	border-radius: 1rem;
 }
 
 /*styling*/
 nav {
-    padding: 1rem;
-    color: floralwhite;
-    background-image: linear-gradient(
-  15deg,
-  hsl(7deg 100% 42%) 0%,
-  hsl(11deg 100% 42%) 3%,
-  hsl(13deg 100% 43%) 6%,
-  hsl(15deg 100% 43%) 9%,
-  hsl(17deg 100% 44%) 12%,
-  hsl(19deg 100% 44%) 14%,
-  hsl(21deg 100% 45%) 16%,
-  hsl(23deg 100% 45%) 18%,
-  hsl(24deg 100% 46%) 19%,
-  hsl(25deg 100% 46%) 21%,
-  hsl(27deg 100% 46%) 22%,
-  hsl(28deg 100% 47%) 23%,
-  hsl(29deg 100% 47%) 24%,
-  hsl(31deg 100% 48%) 25%,
-  hsl(32deg 100% 48%) 26%,
-  hsl(33deg 100% 48%) 28%,
-  hsl(34deg 100% 49%) 30%,
-  hsl(35deg 100% 49%) 33%,
-  hsl(37deg 100% 49%) 38%,
-  hsl(38deg 100% 49%) 45%,
-  hsl(39deg 100% 50%) 59%,
-  hsl(40deg 100% 50%) 100%
-);
+	padding: 1rem;
+	color: floralwhite;
+	background-image: linear-gradient(
+		15deg,
+		hsl(7deg 100% 42%) 0%,
+		hsl(11deg 100% 42%) 3%,
+		hsl(13deg 100% 43%) 6%,
+		hsl(15deg 100% 43%) 9%,
+		hsl(17deg 100% 44%) 12%,
+		hsl(19deg 100% 44%) 14%,
+		hsl(21deg 100% 45%) 16%,
+		hsl(23deg 100% 45%) 18%,
+		hsl(24deg 100% 46%) 19%,
+		hsl(25deg 100% 46%) 21%,
+		hsl(27deg 100% 46%) 22%,
+		hsl(28deg 100% 47%) 23%,
+		hsl(29deg 100% 47%) 24%,
+		hsl(31deg 100% 48%) 25%,
+		hsl(32deg 100% 48%) 26%,
+		hsl(33deg 100% 48%) 28%,
+		hsl(34deg 100% 49%) 30%,
+		hsl(35deg 100% 49%) 33%,
+		hsl(37deg 100% 49%) 38%,
+		hsl(38deg 100% 49%) 45%,
+		hsl(39deg 100% 50%) 59%,
+		hsl(40deg 100% 50%) 100%
+	);
 }
 
 /* Layout */
 nav,
 .sketch-tools {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 1rem;
 }
 
 header {
-    margin-bottom: auto;
+	margin-bottom: auto;
 }
 
-footer{
-    margin-top: auto;
+footer {
+	margin-top: auto;
 }
 
-.main-area{
-    padding: 1rem 2rem 1rem 0.5rem;
-    flex: 1;
-    display: flex;
-    align-items: center;
+.main-area {
+	padding: 1rem 2rem 1rem 0.5rem;
+	flex: 1;
+	display: flex;
+	align-items: center;
 }
 
-.sketchpad-container{
-    flex: 0 1 90vh;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    aspect-ratio: 1/1;
-    max-height: 90vh;
+.sketchpad-container {
+	flex: 0 1 90vh;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	aspect-ratio: 1/1;
+	max-height: 90vh;
 }
 
 .grid-cell {
-    border-style: solid;
+	border-style: solid;
 }
