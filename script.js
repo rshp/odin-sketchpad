@@ -22,18 +22,21 @@ const gridContainer = document.getElementsByClassName('sketchpad-container')[0];
 output.innerHTML = slider.value;
 
 let gridSize = slider.value;
-
-generateGrid(gridSize);
+generateGrid(gridContainer, gridSize);
 
 slider.oninput = function () {
+	clearElement(gridContainer);
+	output.innerHTML = this.value;
+	generateGrid(gridContainer, this.value);
+};
+
+function clearElement(gridContainer) {
 	while (gridContainer.firstChild) {
 		gridContainer.firstChild.remove();
 	}
-	output.innerHTML = this.value;
-	generateGrid(this.value);
-};
+}
 
-function generateGrid(gridSize) {
+function generateGrid(gridContainer, gridSize) {
 	const divList = Array.apply(null, Array((+gridSize) ** 2));
 	divList.forEach((element, index) => {
 		divList[index] = document.createElement('div');
