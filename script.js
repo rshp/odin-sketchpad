@@ -21,7 +21,10 @@ const output = document.getElementById('demo');
 const gridContainer = document.getElementsByClassName('sketchpad-container')[0];
 const clearButton = document.getElementById('button-clear');
 const nav = document.getElementsByTagName('nav')[0];
+const mainArea = document.getElementsByClassName('main-area')[0];
 let bordersStatus = false;
+let mouseDown = false;
+let drawType = 'bw';
 
 output.innerHTML = slider.value;
 
@@ -43,9 +46,47 @@ nav.addEventListener('click', (e) => {
 			toggleBorders(gridContainer);
 			bordersStatus = !bordersStatus;
 			break;
+		case `dropdwn-bw`:
+			drawType = 'bw';
+			break;
+		case `dropdwn-grayscale`:
+			drawType = 'grayscale';
+			break;
+		case `rnd-colors`:
+			drawType = 'rnd-colors';
+			break;
 	}
 	console.log(e.target);
 });
+
+gridContainer.addEventListener('mouseover', (e) => {
+	if (!mouseDown) return;
+	fillCell(e.target);
+	e.preventDefault();
+});
+
+mainArea.addEventListener('mousedown', (e) => {
+	mouseDown = true;
+	e.preventDefault();
+});
+mainArea.addEventListener('mouseup', (e) => {
+	mouseDown = false;
+	e.preventDefault();
+});
+
+function fillCell(target) {
+	switch (drawType) {
+		case `bw`:
+			target.style.backgroundColor = 'black';
+			break;
+		case `grayscale`:
+			target.style.backgroundColor = 'blue';
+			break;
+		case `rnd-colors`:
+			target.style.backgroundColor = 'yellow';
+			break;
+	}
+}
 
 function toggleBorders(gridContainer) {
 	gridContainer.childNodes.forEach((element) => {
