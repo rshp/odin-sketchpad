@@ -19,6 +19,10 @@
 const slider = document.getElementById('myRange');
 const output = document.getElementById('demo');
 const gridContainer = document.getElementsByClassName('sketchpad-container')[0];
+const clearButton = document.getElementById('button-clear');
+const nav = document.getElementsByTagName('nav')[0];
+let bordersStatus = false;
+
 output.innerHTML = slider.value;
 
 let gridSize = slider.value;
@@ -30,9 +34,34 @@ slider.oninput = function () {
 	generateGrid(gridContainer, this.value);
 };
 
+nav.addEventListener('click', (e) => {
+	switch (e.target.id) {
+		case 'button-clear':
+			clearGrid(gridContainer);
+			break;
+		case 'button-borders':
+			toggleBorders(gridContainer);
+			bordersStatus = !bordersStatus;
+			break;
+	}
+	console.log(e.target);
+});
+
+function toggleBorders(gridContainer) {
+	gridContainer.childNodes.forEach((element) => {
+		element.classList.toggle('grid-show-borders');
+	});
+}
+
 function clearElement(gridContainer) {
 	while (gridContainer.firstChild) {
 		gridContainer.firstChild.remove();
+	}
+}
+
+function clearGrid(gridContainer) {
+	for (const element of gridContainer.childNodes) {
+		element.style.backgroundColor = `white`;
 	}
 }
 
@@ -47,4 +76,7 @@ function generateGrid(gridContainer, gridSize) {
 		'style',
 		`grid-template-columns: repeat(${gridSize}, 1fr)`
 	);
+	if (bordersStatus) {
+		toggleBorders(gridContainer);
+	}
 }

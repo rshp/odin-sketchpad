@@ -24,6 +24,12 @@ nav {
 	box-shadow: 10px 0px 20px 6px rgba(255, 146, 57, 0.664);
 }
 
+.grid-show-borders {
+	border-style: solid;
+	border-width: 1px;
+	border-color: lightgray;
+}
+
 button,
 .dropbtn,
 .dropdown-content {
@@ -174,8 +180,5 @@ footer {
 }
 
 .grid-cell {
-	background-color: #ff6a00;
-	border-width: 0.1px;
-	border-style: solid;
-	box-sizing: bord;
+	box-sizing: border-box;
 }
