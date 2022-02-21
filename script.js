@@ -1,21 +1,3 @@
-//Pseudocode
-//Read user grid size setting
-//  Get grid size from document
-//  On document change - clean and redraw grid
-//Create grid from user settings
-//
-//Create events for grid
-//
-//User events callback on grid setting change
-//  get size, style, border
-//
-//
-//
-//
-//
-//
-//
-//
 const slider = document.getElementById('myRange');
 const output = document.getElementById('demo');
 const gridContainer = document.getElementsByClassName('sketchpad-container')[0];
@@ -26,11 +8,12 @@ let bordersStatus = false;
 let mouseDown = false;
 let drawType = 'bw';
 
+//Sync section
 output.innerHTML = slider.value;
-
 let gridSize = slider.value;
 generateGrid(gridContainer, gridSize);
 
+//Async section
 slider.oninput = function () {
 	clearElement(gridContainer);
 	output.innerHTML = this.value;
