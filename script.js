@@ -39,7 +39,6 @@ nav.addEventListener('click', (e) => {
 			drawType = 'rnd-colors';
 			break;
 	}
-	console.log(e.target);
 });
 
 gridContainer.addEventListener('mouseover', (e) => {
@@ -63,7 +62,24 @@ function fillCell(target) {
 			target.style.backgroundColor = 'black';
 			break;
 		case `grayscale`:
-			target.style.backgroundColor = 'blue';
+			// let targetColor = parseRgbString(
+			// 	getComputedStyle(target).backgroundColor
+			// );
+			// console.log(targetColor);
+			// if (
+			// 	targetColor[1] == targetColor[2] &&
+			// 	targetColor[2] == targetColor[3]
+			// ) {
+			// targetColor[0] += 5;
+			// targetColor[1] += 5;
+			// targetColor[2] += 5;
+			// }
+
+			target.setAttribute(
+				'style',
+				//`background-color: rgba(${targetColor[1]},${targetColor[2]},${targetColor[3]},1)`
+				`background-color: rgb(1,1,1);`
+			);
 			break;
 		case `rnd-colors`:
 			target.style.backgroundColor = 'yellow';
@@ -103,4 +119,9 @@ function generateGrid(gridContainer, gridSize) {
 	if (bordersStatus) {
 		toggleBorders(gridContainer);
 	}
+}
+
+function parseRgbString(rgb) {
+	rgb = rgb.replace(/[^\d,]/g, '').split(',');
+	return rgb;
 }
