@@ -12,6 +12,7 @@ let drawType = 'bw';
 output.innerHTML = slider.value;
 let gridSize = slider.value;
 generateGrid(gridContainer, gridSize);
+clearGrid(gridContainer);
 
 //Async section
 slider.oninput = function () {
@@ -57,32 +58,28 @@ mainArea.addEventListener('mouseup', (e) => {
 });
 
 function fillCell(target) {
+	let targetColor = parseRgbString(getComputedStyle(target).backgroundColor);
 	switch (drawType) {
 		case `bw`:
 			target.style.backgroundColor = 'black';
 			break;
 		case `grayscale`:
-			// let targetColor = parseRgbString(
-			// 	getComputedStyle(target).backgroundColor
-			// );
-			// console.log(targetColor);
-			// if (
-			// 	targetColor[1] == targetColor[2] &&
-			// 	targetColor[2] == targetColor[3]
-			// ) {
-			// targetColor[0] += 5;
-			// targetColor[1] += 5;
-			// targetColor[2] += 5;
-			// }
-
+			targetColor = targetColor.map((val) => (val -= 50));
 			target.setAttribute(
 				'style',
-				//`background-color: rgba(${targetColor[1]},${targetColor[2]},${targetColor[3]},1)`
-				`background-color: rgb(1,1,1);`
+				`background-color: rgb(${targetColor[0]},${targetColor[1]},${targetColor[2]})`
 			);
 			break;
 		case `rnd-colors`:
-			target.style.backgroundColor = 'yellow';
+			targetColor = Array.apply(null, Array(3));
+			targetColor = targetColor.map((value) => {
+				return Math.floor(Math.random() * 255);
+			});
+			console.log(targetColor);
+			target.setAttribute(
+				'style',
+				`background-color: rgb(${targetColor[0]},${targetColor[1]},${targetColor[2]})`
+			);
 			break;
 	}
 }
@@ -119,6 +116,7 @@ function generateGrid(gridContainer, gridSize) {
 	if (bordersStatus) {
 		toggleBorders(gridContainer);
 	}
+	clearGrid(gridContainer);
 }
 
 function parseRgbString(rgb) {
